@@ -1,10 +1,18 @@
-
-const Task = ({data}) => {
+const Task = ({ data }) => {
   return (
     <div>
-        <h3>{data.title}</h3>
+      <label>
+        <input
+          type="checkbox"
+          id={data.id}
+          value={data.title}
+          name={data.title}
+          defaultChecked={data.completed}
+        />
+        {data.title}
+      </label>
     </div>
-  )
-}
+  );
+};
 
-export default Task
+export default Task;
