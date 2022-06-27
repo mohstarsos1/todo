@@ -6,7 +6,7 @@ const TaskList = () => {
 
   useEffect(() => {
     const getTasks = async () => {
-      const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+      const res = await fetch("http://localhost:8000/tasks");
       const resData = await res.json();
       setTasks(resData);
     };
@@ -16,7 +16,7 @@ const TaskList = () => {
   return (
     <div>
       {tasks.map((item) => (
-        <Task data={item} />
+        <Task data={item} key={item.id} />
       ))}
     </div>
   );
